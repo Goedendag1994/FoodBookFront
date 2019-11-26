@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment'
+import { environment } from 'src/environments/environment';
 import { Recipe } from 'src/domain/recipe';
 
 @Injectable({
@@ -16,16 +16,16 @@ export class RecipeService {
         return this.http.get<Recipe[]>(`${environment.foodbookUrl}recipe`);
     }
 
-    public findRecipeById(): Observable<Recipe>{
-        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/{recipeId}`)
+    public findRecipeById(recipeId: number): Observable<Recipe>{
+        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/${recipeId}`);
     }
 
-    public findByRecipeTitle(): Observable<Recipe>{
-        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/recipeTitle/{recipeTitle}`)
+    public findByRecipeTitle(recipeTitle: string): Observable<Recipe>{
+        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/recipeTitle/${recipeTitle}`);
     }
 
-    public findByRecipeTitleLike(): Observable<Recipe[]>{
-        return this.http.get<Recipe[]>(`${environment.foodbookUrl}recipe/recipetitlelike/{recipeTitle}`)
+    public findByRecipeTitleLike(recipeTitle: string): Observable<Recipe[]>{
+        return this.http.get<Recipe[]>(`${environment.foodbookUrl}recipe/recipetitlelike/${recipeTitle}`);
     }
 
 
