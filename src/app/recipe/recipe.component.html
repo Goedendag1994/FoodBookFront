@@ -1,4 +1,25 @@
-<p>recipe works!</p>
-<!-- <table>
-    <tr><td>Receptnaam: </td><td><input type="text" value='{{recipe.recipeTitle}}' readonly></td></tr>
-</table> -->
+<!-- <button (click)="newAlbumForm()">New Recipe</button> -->
+<h1>Recipe</h1>
+<br>
+(Use "%" as wildcard)
+<br>    
+<input type="text" [(ngModel)]='recipeId' placeholder="Search recipe">
+<button (click)="findRecipeById()">Search</button>
+<br>
+<br>
+<table border="1">
+    <tr >
+        <th>Recipe ID</th>
+        <th>Recipe title</th>
+        
+    </tr>
+        <tr>
+        <td><a [routerLink]="['recipe', recipe.recipeId]" >{{recipe.recipeId}}</a></td>
+        <td>{{recipe.recipeTitle}}</td>
+    </tr>
+</table>
+<br>
+
+
+
+<router-outlet></router-outlet>
