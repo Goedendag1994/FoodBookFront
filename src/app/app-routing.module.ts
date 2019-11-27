@@ -7,7 +7,7 @@ import { UploadRecipeComponent } from './upload-recipe/upload-recipe.component'
 const routes: Routes = [
   { path: "recipe", component: RecipeComponent , children: [
       { path: "recipe/:recipeId", component: RecipeComponent}]},
-  { path: "Upload recipe", component: UploadRecipeComponent }
+  { path: "upload-recipe", component: UploadRecipeComponent }
 ];
 
 @NgModule({

@@ -1,28 +1,14 @@
 
 <table>
     <caption>
-        <h3>Nieuw Album </h3>
+        <h3>Add new recipe</h3>
     </caption>
     <tr>
-        <td>Albumnaam: </td>
-        <td><input type="text" [(ngModel)]="naam"></td>
+        <td>Recipe title: </td>
+        <td><input type="text" [(ngModel)]="recipeTitle"></td>
     </tr>
-    <tr>
-        <td>Artiest: </td>
-        <td>
-            <select [(ngModel)]="selectedArtiest" (change)="select()" >
 
-                <option *ngFor="let artiest of artiesten" [ngValue]="artiest">{{artiest.naam}}</option>
-            </select>
-
-
-        </td>
-    </tr>
-    <tr>
-        <td>Jaar: </td>
-        <td><input type="text" [(ngModel)]="jaar"></td>
-    </tr>
-    <tr><td><button (click)="createAlbum()">Create</button></td></tr>
+    <tr><td><button (click)="addRecipe()">Add recipe</button></td></tr>
 </table>
 
 <router-outlet></router-outlet>

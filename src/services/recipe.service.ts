@@ -28,6 +28,10 @@ export class RecipeService {
         return this.http.get<Recipe[]>(`${environment.foodbookUrl}recipe/recipetitlelike/${recipeTitle}`);
     }
 
+    public addRecipe(recipe: Recipe): Observable<Recipe>{
+        console.log(JSON.stringify(recipe));
+        return this.http.post<Recipe> (`${environment.foodbookUrl}recipe`, recipe, this.httpOptions);
+    }
 
 
 }
