@@ -4,7 +4,7 @@
 (Use "%" as wildcard)
 <br>    
 <input type="text" [(ngModel)]='recipeId' placeholder="Search recipe">
-<button (click)="findRecipeById()">Search</button>
+<button (click)="findRecipeById()">Search by recipeId</button>
 <br>
 <br>
 <table border="1">
@@ -20,6 +20,24 @@
 </table>
 <br>
 
+
+<input type="text" [(ngModel)]='partOfDish' placeholder="Search partofdishrecipeid">
+<button (click)="findByRecipeRecipeId()">Search part of dish by recipeId</button>
+<br>
+<br>
+<table border="1">
+    <tr >
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Ingredient</th>
+    </tr>
+    <tr *ngFor="let partofdish of partOfDishes">
+        <td>{{partofdish.quantity}}</td>
+        <td>{{partofdish.unit}}</td>
+        <td>{{partofdish.ingredient.nameIngredient}}</td>
+    </tr>
+</table>
+<br>
 
 
 <router-outlet></router-outlet>

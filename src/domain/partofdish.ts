@@ -1,7 +1,7 @@
-import {Ingredient} from './ingredient'
+import { Ingredient } from './ingredient'
 import { Recipe } from './recipe';
 
-export class Partofdish {
+export class PartOfDish {
 
     private _partOfDishId: number;
     private _ingredient: Ingredient;
