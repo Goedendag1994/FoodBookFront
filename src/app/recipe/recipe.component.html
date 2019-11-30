@@ -1,42 +1,4 @@
 <h1>Search for recipes</h1>
-<!-- <br>
-(Use "%" as wildcard)
-<br>    
-<input type="text" [(ngModel)]='recipeId' placeholder="Search recipe">
-<button (click)="findRecipeById()">Search by recipeId</button>
-<br>
-<br>
-<table border="1">
-    <tr >
-        <th>Recipe ID</th>
-        <th>Recipe title</th>
-        
-    </tr>
-        <tr>
-        <td><a [routerLink]="['recipe', recipe.recipeId]" >{{recipe.recipeId}}</a></td>
-        <td>{{recipe.recipeTitle}}</td>
-    </tr>
-</table>
-<br>
-
-
-<input type="text" [(ngModel)]='partOfDish' placeholder="Search partofdishrecipeid">
-<button (click)="findByRecipeRecipeId()">Search part of dish by recipeId</button>
-<br>
-<br>
-<table border="1">
-    <tr >
-        <th>Quantity</th>
-        <th>Unit</th>
-        <th>Ingredient</th>
-    </tr>
-    <tr *ngFor="let partofdish of partOfDishes">
-        <td>{{partofdish.quantity}}</td>
-        <td>{{partofdish.unit}}</td>
-        <td>{{partofdish.ingredient.nameIngredient}}</td>
-    </tr>
-</table>
-<br> -->
 
 <input type="text" [(ngModel)]='recipeTitle' placeholder="Search recipe by title">
 <button (click)="findByRecipeTitleLike()">Search recipes</button>
