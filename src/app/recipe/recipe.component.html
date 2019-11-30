@@ -1,6 +1,5 @@
-<!-- <button (click)="newAlbumForm()">New Recipe</button> -->
-<h1>Recipe</h1>
-<br>
+<h1>Search for recipes</h1>
+<!-- <br>
 (Use "%" as wildcard)
 <br>    
 <input type="text" [(ngModel)]='recipeId' placeholder="Search recipe">
@@ -35,6 +34,17 @@
         <td>{{partofdish.quantity}}</td>
         <td>{{partofdish.unit}}</td>
         <td>{{partofdish.ingredient.nameIngredient}}</td>
+    </tr>
+</table>
+<br> -->
+
+<input type="text" [(ngModel)]='recipeTitle' placeholder="Search recipe by title">
+<button (click)="findByRecipeTitleLike()">Search recipes</button>
+<br>
+<br>
+<table border="0">
+    <tr *ngFor="let recipe of recipes">
+        <td><a [href]="['/check-recipe?id=', recipe.recipeId]" >{{recipe.recipeTitle}}</a></td>
     </tr>
 </table>
 <br>

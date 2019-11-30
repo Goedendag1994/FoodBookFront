@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+// import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Recipe } from 'src/domain/recipe';
 import { RecipeService } from 'src/services/recipe.service';
-// import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
 import { PartofdishService } from 'src/services/partofdish.service';
 import { PartOfDish } from 'src/domain/partofdish';
 
@@ -16,10 +16,13 @@ import { PartOfDish } from 'src/domain/partofdish';
 export class RecipeComponent implements OnInit {
 
   recipe: Recipe;
-  partOfDishes: PartOfDish[];
   recipeId: number;
+  recipes: Recipe[];
+  recipeTitle: string;
+  partOfDishes: PartOfDish[];
 
-  constructor(private activatedRoute: ActivatedRoute, private recipeService: RecipeService, private partOfDishService: PartofdishService) { }
+
+  constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService) { }
 
   ngOnInit() {
    }
@@ -41,8 +44,18 @@ export class RecipeComponent implements OnInit {
       (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
       () => { }
     )
-
     }
+
+
+    findByRecipeTitleLike() {
+      var recipeTitle = encodeURI(this.recipeTitle);
+      console.log(recipeTitle);
+      this.recipeService.findByRecipeTitleLike(recipeTitle).subscribe(
+        (recipes: Recipe[]) => {this.recipes = recipes; console.log(this.recipes)},
+        (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+        () => { }
+      )
+      }
 
 
 }

@@ -26,7 +26,7 @@ export class Recipe {
 
     /**
      * Getter recipeTitle
-     * @return {number}
+     * @return {string}
      */
     public get recipeTitle(): string {
         return this._recipeTitle;

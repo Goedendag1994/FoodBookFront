@@ -1,0 +1,21 @@
+
+
+
+<p></p>
+
+
+
+<br>
+<table border="1">
+    <tr >
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Ingredient</th>
+    </tr>
+    <tr *ngFor="let partofdish of partOfDishes">
+        <td>{{partofdish.quantity}}</td>
+        <td>{{partofdish.unit}}</td>
+        <td>{{partofdish.ingredient.nameIngredient}}</td>
+    </tr>
+</table>
+<br>

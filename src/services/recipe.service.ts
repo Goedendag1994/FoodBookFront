@@ -10,6 +10,7 @@ import { Recipe } from 'src/domain/recipe';
 
 export class RecipeService {
     httpOptions = { headers: new HttpHeaders({'content-type': 'application/json'}) }
+    
     constructor(private http:HttpClient){ }
 
     public findAll(): Observable<Recipe[]>{

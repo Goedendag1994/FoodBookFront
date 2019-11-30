@@ -6,12 +6,14 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { FormsModule } from '@angular/forms';
 import { UploadRecipeComponent } from './upload-recipe/upload-recipe.component'
 import { HttpClientModule } from '@angular/common/http';
+import { FullRecipeComponent } from './full-recipe/full-recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
-    UploadRecipeComponent
+    UploadRecipeComponent,
+    FullRecipeComponent
   ],
   imports: [
     BrowserModule,
