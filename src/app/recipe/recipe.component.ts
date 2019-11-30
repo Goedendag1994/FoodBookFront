@@ -23,6 +23,7 @@ export class RecipeComponent implements OnInit {
   constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService) { }
 
   ngOnInit() {
+    
    }
 
     findByRecipeTitleLike() {

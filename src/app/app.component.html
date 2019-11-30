@@ -315,4 +315,15 @@
 </div>
 
 
+<h1>All recipes</h1>
+<br>
+<br>
+<table border="0">
+    <tr *ngFor="let recipe of recipelist">
+        <td><a [href]="['/check-recipe?id=', recipe.recipeId]" >{{recipe.recipeTitle}}</a></td>
+    </tr>
+</table>
+<br>
+
+
 <router-outlet></router-outlet>
