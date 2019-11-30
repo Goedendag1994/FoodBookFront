@@ -1,14 +1,12 @@
 
 <table>
-    <caption>
-        <h3>Add new recipe</h3>
-    </caption>
     <tr>
         <td>Recipe title: </td>
         <td><input type="text" [(ngModel)]="recipeTitle"></td>
     </tr>
 
-    <tr><td><button (click)="addRecipe()">Add recipe</button></td></tr>
+    <tr><td><button class="btn btn-outline-success my-2 my-sm-0" 
+        (click)="addRecipe()">Add recipe</button></td></tr>
 </table>
 
 <router-outlet></router-outlet>

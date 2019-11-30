@@ -7,13 +7,17 @@ import { FormsModule } from '@angular/forms';
 import { UploadRecipeComponent } from './upload-recipe/upload-recipe.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FullRecipeComponent } from './full-recipe/full-recipe.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
     UploadRecipeComponent,
-    FullRecipeComponent
+    FullRecipeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

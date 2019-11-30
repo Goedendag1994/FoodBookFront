@@ -1,8 +1,9 @@
 <h1>{{recipe.recipeTitle}}</h1>
 
 <br>
-<table border="0">
+<table class= "table-condensed table-borderless">
     <tr *ngFor="let partofdish of partOfDishes">
+        <td>•</td>
         <td>{{partofdish.quantity}}</td>
         <td>{{partofdish.unit}}</td>
         <td>{{partofdish.ingredient.nameIngredient}}</td>
