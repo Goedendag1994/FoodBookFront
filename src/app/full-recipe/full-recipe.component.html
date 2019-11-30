@@ -1,17 +1,12 @@
 
 
 
-<p></p>
+<p>{{recipe.recipeTitle}}</p>
 
 
 
 <br>
-<table border="1">
-    <tr >
-        <th>Quantity</th>
-        <th>Unit</th>
-        <th>Ingredient</th>
-    </tr>
+<table border="0">
     <tr *ngFor="let partofdish of partOfDishes">
         <td>{{partofdish.quantity}}</td>
         <td>{{partofdish.unit}}</td>

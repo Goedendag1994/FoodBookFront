@@ -17,6 +17,7 @@ export class FullRecipeComponent implements OnInit {
 
     recipeId: number;
     partOfDishes: PartOfDish[];
+    recipe: Recipe;
 
   constructor(private activatedRoute: ActivatedRoute, private recipeService: RecipeService, private partOfDishService: PartofdishService) { }
 
@@ -27,8 +28,8 @@ export class FullRecipeComponent implements OnInit {
       console.log(id);
       this.recipeId = id;
       console.log(this.recipeId);
-      window.onload(this.findByRecipeRecipeId(id));
-
+      this.findByRecipeRecipeId();
+      this.findRecipeById();
   }
 
 
@@ -41,5 +42,15 @@ export class FullRecipeComponent implements OnInit {
       () => { }
     )
     }
+
+
+    findRecipeById() {
+      console.log(this.recipeId);
+      this.recipeService.findRecipeById(this.recipeId).subscribe(
+        (recipe: Recipe) => {this.recipe = recipe; console.log(this.recipe)},
+        (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+        () => { }
+      )
+      }
 
 }
