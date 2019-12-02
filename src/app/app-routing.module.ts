@@ -7,6 +7,7 @@ import { FullRecipeComponent } from './full-recipe/full-recipe.component';
 
 const routes: Routes = [
   { path: "recipe", component: RecipeComponent , children: [
+      { path: "recipe/:recipeTitle", component: RecipeComponent},
       { path: "recipe/:recipeId", component: RecipeComponent},
       { path: "recipe/partofdish/:recipeId", component: RecipeComponent},
       { path: "recipe/recipetitlelike/:recipeTitle", component: RecipeComponent}]},

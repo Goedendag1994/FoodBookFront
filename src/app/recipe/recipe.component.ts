@@ -4,6 +4,7 @@ import { Recipe } from 'src/domain/recipe';
 import { RecipeService } from 'src/services/recipe.service';
 import { PartofdishService } from 'src/services/partofdish.service';
 import { PartOfDish } from 'src/domain/partofdish';
+import { ActivatedRoute }  from '@angular/router';
 
 
 @Component({
@@ -20,10 +21,19 @@ export class RecipeComponent implements OnInit {
   partOfDishes: PartOfDish[];
 
 
-  constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService) { }
+  constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    
+    this.activatedRoute.params.subscribe(
+      params => { this.recipeService.findByRecipeTitleLike(params['recipeTitle']).subscribe(
+        (recipes:Recipe[])=> {this.recipes=recipes},
+        (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message),
+        ()=>{}
+      )
+     }      
+      , (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message)
+      , () => { }
+    )
    }
 
     findByRecipeTitleLike() {
