@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipeComponent } from './recipe/recipe.component';
 import { UploadRecipeComponent } from './upload-recipe/upload-recipe.component'
 import { FullRecipeComponent } from './full-recipe/full-recipe.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 
 const routes: Routes = [

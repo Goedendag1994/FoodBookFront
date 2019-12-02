@@ -24,16 +24,10 @@ export class RecipeComponent implements OnInit {
   constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(
-      params => { this.recipeService.findByRecipeTitleLike(params['recipeTitle']).subscribe(
-        (recipes:Recipe[])=> {this.recipes=recipes},
-        (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message),
-        ()=>{}
-      )
-     }      
-      , (fout: HttpErrorResponse)=>alert("Er is een fout opgetreden: "+fout.status + " "+ fout.error+"\n"+"\nMessage:\n"+fout.message)
-      , () => { }
-    )
+    let id = this.activatedRoute.snapshot.queryParams["recipesearch"]
+    console.log(id);
+    this.recipeId = id;
+    console.log(this.recipeId);
    }
 
     findByRecipeTitleLike() {
