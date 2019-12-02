@@ -13,20 +13,20 @@ export class AppComponent {
   recipelist: Recipe[];
 
   ngOnInit(){
-    this.findAll();
+    // this.findAll();
   }
 
 
   constructor(private recipeService: RecipeService) { }
 
 
-  findAll() {
-    this.recipeService.findAll().subscribe(
-      (recipelist: Recipe[]) => {this.recipelist = recipelist; console.log(this.recipelist)},
-      (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
-      () => { }
-    )
-    }
+  // findAll() {
+  //   this.recipeService.findAll().subscribe(
+  //     (recipelist: Recipe[]) => {this.recipelist = recipelist; console.log(this.recipelist)},
+  //     (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
+  //     () => { }
+  //   )
+  //   }
 
 
 }

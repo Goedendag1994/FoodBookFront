@@ -19,21 +19,23 @@ export class RecipeComponent implements OnInit {
   recipes: Recipe[];
   recipeTitle: string;
   partOfDishes: PartOfDish[];
+  recipeTitleLike: string;
 
 
   constructor(private recipeService: RecipeService, private partOfDishService: PartofdishService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    let id = this.activatedRoute.snapshot.queryParams["recipesearch"]
-    console.log(id);
-    this.recipeId = id;
-    console.log(this.recipeId);
+    let recipeTitleLike = this.activatedRoute.snapshot.queryParams["recipesearch"]
+    console.log(recipeTitleLike);
+    this.recipeTitleLike = recipeTitleLike;
+    console.log(this.recipeTitle);
+    this.findByRecipeTitleLike(this.recipeTitleLike);
    }
 
-    findByRecipeTitleLike() {
-      var recipeTitle = encodeURI(this.recipeTitle);
-      console.log(recipeTitle);
-      this.recipeService.findByRecipeTitleLike(recipeTitle).subscribe(
+    findByRecipeTitleLike(recipeTitleLike: string) {
+      var recipeTitleLike = encodeURI(this.recipeTitleLike);
+      console.log(recipeTitleLike);
+      this.recipeService.findByRecipeTitleLike(recipeTitleLike).subscribe(
         (recipes: Recipe[]) => {this.recipes = recipes; console.log(this.recipes)},
         (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
         () => { }
