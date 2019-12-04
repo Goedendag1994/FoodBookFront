@@ -1,0 +1,84 @@
+<h1><img src="src/app/home/Images/Foodbook logo kleur.png" alt="">FOODBOOK</h1>
+
+  <div class="card-columns">
+    <div class="card shadow">
+      <img src="https://i.imgur.com/zDjhcxy.jpg" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title" >Wortel pepernoten stamppot</h5>
+        <p class="card-text text-muted" >Een lekkere frisse combinatie perfect voor de feestdagen</p>
+        <!-- <a class="btn stretched-link" routerLink="./../recipe" >{{recipe.RecipeTitle}}</a> -->
+        <a class="btn stretched-link" (click)="toRecipes()">{{recipe.RecipeTitle}}</a>
+      </div>
+    </div>
+    <div class="card p-3 shadow">
+      <blockquote class="blockquote mb-0 card-body text-succes">
+        <p class="card-text">If an architect makes a mistake, he grows ivy to cover it. If a doctor makes a mistake, he covers it with soil.
+          If a cook makes a mistake, he covers it with some sauce and says it is a new recipe.
+        </p>
+        <footer class="blockquote-footer">
+          <small class="text-muted">
+            Paul Bocuse <cite title="Source Title"></cite>
+          </small>
+        </footer>
+      </blockquote>
+    </div>
+    <div class="card shadow">
+      <img src="https://i.imgur.com/jgSwPmn.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Stamppot andijvie</h5>
+        <p class="card-text text-muted">Een oude favoriet, lekker tijdens de gure winterse dagen</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn stretched-link" routerLink="./../recipe/check-recipe?id=,1" >{{recipe.RecipeTitle}}</a>
+      </div>
+    </div>
+    <div class="card bg-primary text-white text-center p-3 shadow">
+      <blockquote class="blockquote mb-0">
+        <p>Kitchens should be designed around what truly is important: fun, food and life</p>
+        <footer class="blockquote-footer text-white">
+          <small>
+            Daniel Boulud  <cite title="Source Title"></cite>
+          </small>
+        </footer>
+      </blockquote>
+    </div>
+   
+    <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title">Eline the rainbow unicorn</h5>
+          <p class="card-text text-muted" >De schrijver van deze website is een grote fan van regenbogen en eenhoorns, Eline Kompanje is een enthousiaste
+            Java programmeur en houd van wortel pepernoten stamppot en pepperoni. 
+          </p>
+          <p class="card-text"><small class="text-muted">Last updated 8 mins ago</small></p>
+        </div>
+      </div>
+
+    <div class="card p-3 text-right bg-dark text-white shadow" >
+      <blockquote class="blockquote mb-0">
+        <p>I feel a recipe is only a theme WHICH an intelligent cook can play each time with a variation</p>
+        <footer class="blockquote-footer">
+          <small class="text-muted">
+            MADAM BENOIT<cite title="Source Title"></cite>
+          </small>
+        </footer>
+      </blockquote>
+    </div>
+
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">Witlof</h5>
+        <p class="card-text text-muted">Witlof recept komt hier.</p>
+        <p class="card-text"><small class="text-muted">Last updated 16 days ago</small></p>
+      </div>
+    </div>
+    <div class="card text-center shadow">
+        <div class="card">
+            <img src="https://i.imgur.com/Uo5jptV.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Aardbeien sorbet</h5>
+              <p class="card-text text-muted">Een lekker fruitige frisse sorbet voor bij het warme weer.</p>
+              <a class="btn stretched-link" routerLink="./../recipe/" >{{recipe.RecipeTitle}}</a>
+            </div>
+          </div>
+        
+  </div>
+  <router-outlet></router-outlet>

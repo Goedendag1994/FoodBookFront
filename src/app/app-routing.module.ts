@@ -4,6 +4,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { UploadRecipeComponent } from './upload-recipe/upload-recipe.component'
 import { FullRecipeComponent } from './full-recipe/full-recipe.component';
 import { HeaderComponent } from './layout/header/header.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "upload-recipe", component: UploadRecipeComponent },
   { path: "check-recipe", component: FullRecipeComponent, children: [
     { path: "check-recipe/:recipeId", component: FullRecipeComponent},
-] }
+] },
+{path: "home", component: HomeComponent}
 ];
 
 @NgModule({

@@ -100,7 +100,7 @@ export class PartOfDish {
     public toJSON(){
         return{
             partOfDishId: this.partOfDishId,
-            Ingredient: this.ingredient,
+            ingredient: this.ingredient,
             unit: this.unit,
             quantity: this.quantity,
             recipe: this.recipe

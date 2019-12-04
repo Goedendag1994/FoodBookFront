@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
 
-// recipes: Recipe[];
   recipeId: number;
   recipeTitle: string;
 
@@ -29,20 +28,6 @@ export class HeaderComponent implements OnInit{
       this.clicked = true;
     
   }
-
-
-  // findByRecipeTitleLike() {
-  //   var recipeTitle = encodeURI(this.recipeTitle);
-  //   console.log(recipeTitle);
-  //   this.recipeService.findByRecipeTitleLike(recipeTitle).subscribe(
-  //     (recipes: Recipe[]) => {this.recipes = recipes; console.log(this.recipes)},
-  //     (error: HttpErrorResponse) => alert("Er is een fout opgetreden: " + error.status + " " + error.error + "\n" + "\nMessage:\n" + error.message),
-  //     () => { }
-
-  //   )
-  //   }
-
-
     toRecipes(recipeTitle: string){
       console.log(recipeTitle);
       this.router.navigate(['/recipe'], { queryParams: { recipesearch: recipeTitle } });  
