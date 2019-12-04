@@ -16,6 +16,12 @@ export class PartofdishService {
         return this.http.get<PartOfDish[]>(`${environment.foodbookUrl}partofdish`);
     }
 
+    public addPartOfDish(partofdish: PartOfDish): Observable<PartOfDish>{
+        console.log(JSON.stringify(partofdish));
+        return this.http.post<PartOfDish> (`${environment.foodbookUrl}partofdish`, partofdish, this.httpOptions);
+    }
+
+
 
     public findByRecipeRecipeId(recipeId: number): Observable<PartOfDish[]>{
         return this.http.get<PartOfDish[]>(`${environment.foodbookUrl}partofdish/${recipeId}`);

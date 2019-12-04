@@ -22,7 +22,7 @@ export class RecipeService {
     }
 
     public findByRecipeTitle(recipeTitle: string): Observable<Recipe>{
-        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/recipeTitle/${recipeTitle}`);
+        return this.http.get<Recipe>(`${environment.foodbookUrl}recipe/recipetitle/${recipeTitle}`);
     }
 
     public findByRecipeTitleLike(recipeTitle: string): Observable<Recipe[]>{

@@ -4,9 +4,26 @@
         <td>Recipe title: </td>
         <td><input type="text" [(ngModel)]="recipeTitle"></td>
     </tr>
-
-    <tr><td><button class="btn btn-outline-success my-2 my-sm-0" 
-        (click)="addRecipe()">Add recipe</button></td></tr>
+    <tr>
+        <td>Ingredient: </td>
+        <td><input type="text" [(ngModel)]="nameIngredient"></td>
+    </tr>    
+    <tr>
+        <td>Unit: </td>
+        <td><input type="text" [(ngModel)]="unit"></td>
+    </tr>    
+    <tr>
+        <td>Quantity: </td>
+        <td><input type="text" [(ngModel)]="quantity"></td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-outline-success my-2 my-sm-0" 
+                (click)="addRecipe()">Add part of dish</button></td>
+    </tr>       
 </table>
+
+
+
+
 
 <router-outlet></router-outlet>

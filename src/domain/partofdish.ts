@@ -9,7 +9,7 @@ export class PartOfDish {
     private _quantity: number;
     private _recipe: Recipe;
 
-    constructor(partOfDishId: number, ingredient: Ingredient, unit: string, quantity: number, recipe: Recipe){
+    constructor(partOfDishId: number, ingredient: Ingredient, recipe: Recipe, unit: string, quantity: number){
         this._partOfDishId = partOfDishId;
         this._ingredient = ingredient;
         this._unit = unit;

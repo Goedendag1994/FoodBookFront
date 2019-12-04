@@ -16,4 +16,13 @@ export class IngredientService {
         return this.http.get<Ingredient[]>(`${environment.foodbookUrl}recipe`);
     }
 
+    public findByNameIngredient(nameIngredient: string): Observable<Ingredient>{
+        return this.http.get<Ingredient>(`${environment.foodbookUrl}ingredient/nameingredient/${nameIngredient}`);
+    }
+
+    public addIngredient(ingredient: Ingredient): Observable<Ingredient>{
+        console.log(JSON.stringify(ingredient));
+        return this.http.post<Ingredient> (`${environment.foodbookUrl}ingredient`, ingredient, this.httpOptions);
+    }
+
 }
