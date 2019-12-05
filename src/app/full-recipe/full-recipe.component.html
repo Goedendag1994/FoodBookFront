@@ -1,12 +1,15 @@
-<h1>{{recipe.recipeTitle}}</h1>
-
 <br>
-<table class= "table-condensed table-borderless">
-    <tr *ngFor="let partofdish of partOfDishes">
-        <td>•</td>
-        <td>{{partofdish.quantity}}</td>
-        <td>{{partofdish.unit}}</td>
-        <td>{{partofdish.ingredient.nameIngredient}}</td>
-    </tr>
-</table>
-<br>
+<div class="card">
+    <h5 class="card-header">{{recipe.recipeTitle}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Ingrediënten</h5>
+        <table class= "table-condensed table-borderless">
+            <tr *ngFor="let partofdish of partOfDishes">
+                <td>•</td>
+                <td>{{partofdish.quantity}}</td>
+                <td>{{partofdish.unit}}</td>
+                <td>{{partofdish.ingredient.nameIngredient}}</td>
+            </tr>
+        </table>
+    </div>
+  </div>
